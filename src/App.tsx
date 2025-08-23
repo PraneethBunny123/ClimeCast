@@ -1,10 +1,19 @@
-import { Button } from "@/components/ui/button"
+import Layout from './components/Layout'
+import { ThemeProvider } from './components/theme-provider'
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
+
     return (
-        <div className="flex min-h-svh flex-col items-center justify-center">
-            <Button>Installed deps</Button>
-        </div>
+        <BrowserRouter>
+            <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+                <Layout>
+                    <h1 className="text-3xl font-bold underline">
+                        
+                    </h1>
+                </Layout>
+            </ThemeProvider>
+        </BrowserRouter>
     )
 }
 
