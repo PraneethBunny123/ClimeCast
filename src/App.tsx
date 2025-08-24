@@ -1,6 +1,8 @@
 import Layout from './components/Layout'
 import { ThemeProvider } from './components/theme-provider'
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Dashboard from './pages/Dashboard'
+import City from './pages/City'
 
 function App() {
 
@@ -8,9 +10,10 @@ function App() {
         <BrowserRouter>
             <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
                 <Layout>
-                    <h1 className="text-3xl font-bold underline">
-                        
-                    </h1>
+                    <Routes>
+                        <Route path='/' element={<Dashboard />}></Route>
+                        <Route path='/city/:cityName' element={<City />}></Route>
+                    </Routes>
                 </Layout>
             </ThemeProvider>
         </BrowserRouter>

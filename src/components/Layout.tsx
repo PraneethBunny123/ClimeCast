@@ -1,12 +1,11 @@
 import type { PropsWithChildren } from "react";
-import { ModeToggle } from "./toggleMode";
+import Header from "./Header";
 
 export default function Layout({children}: PropsWithChildren) {
     return (
         <div className="bg-gradient-to-br from-background to-muted">
             {/* header */}
-            Header
-            <ModeToggle />
+            <Header />
 
             {/* content */}
             <main className="min-h-screen container mx-auto px-4 py-8">
