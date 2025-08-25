@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./toggleMode";
+import CitySearch from "./CitySearch";
 
 export default function Header() {
     return (
@@ -8,8 +9,9 @@ export default function Header() {
             {/* Link to home page */}
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 <Link to="/">ClimeCast</Link>
-                <div>
+                <div className="flex gap-4">
                     {/* Search */}
+                    <CitySearch />
                     
                     {/* theme toggle */}
                     <ModeToggle />
