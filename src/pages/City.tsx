@@ -1,4 +1,5 @@
 import CurrentWeather from "@/components/CurrentWeather"
+import FavoriteButton from "@/components/FavoriteButton"
 import HourlyTemperature from "@/components/HourlyTemperature"
 import LoadingSkeleton from "@/components/LoadingSkeleton"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -42,7 +43,8 @@ export default function City() {
                     {params.cityName}, {weatherQuery.data.sys.country}
                 </h1>
                 <div>
-                    {/* favorite */}
+                    {/* favorite button */}
+                    <FavoriteButton data={{...weatherQuery.data, name: params.cityName}}/>
                 </div>
             </div>
 
