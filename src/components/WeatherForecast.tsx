@@ -28,7 +28,7 @@ interface DailyForecast {
 
 export default function WeatherForecast({data}: WeatherForecastProps) {
     const dailyForecasts = data.list.reduce((acc, forecast) => {
-        const date = format(new Date(forecast.dt * 1000), "yyyy-mm-dd")
+        const date = format(new Date(forecast.dt * 1000), "yyyy-MM-dd")
 
         if(!acc[date]) {
             acc[date] = {
@@ -41,7 +41,7 @@ export default function WeatherForecast({data}: WeatherForecastProps) {
             }
         } else {
             acc[date].temp_min = Math.min(acc[date].temp_min, forecast.main.temp_min)
-            acc[date].temp_max = Math.min(acc[date].temp_max, forecast.main.temp_max)
+            acc[date].temp_max = Math.max(acc[date].temp_max, forecast.main.temp_max)
         }
 
         return acc;
@@ -88,7 +88,7 @@ export default function WeatherForecast({data}: WeatherForecastProps) {
                                 </span>
                                 <span className="flex items-center gap-1">
                                     <Wind className="h-4 w-4 text-blue-500" />
-                                    <span className="text-sm">{day.wind}m/s</span>
+                                    <span className="text-sm">{day.wind} mph</span>
                                 </span>
                             </div>
 
