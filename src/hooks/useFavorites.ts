@@ -28,7 +28,7 @@ export function useFavorites() {
         mutationFn: async (city: Omit<FavoriteItem, "id" | "AddedAt">) => {
             const newFavorite: FavoriteItem = {
                 ...city,
-                id: `${city.lat}-${city.lon}-${Date.now()}`,
+                id: `${city.lat}-${city.lon}`,
                 AddedAt: Date.now(),
             }
 
@@ -36,7 +36,7 @@ export function useFavorites() {
 
             if(exists) return favorites
 
-            const newFavorites = [...favorites, newFavorite].slice(0, 10);
+            const newFavorites = [...favorites, newFavorite];
 
             setFavorites(newFavorites)
             return newFavorites;
@@ -63,7 +63,7 @@ export function useFavorites() {
     })
 
     return {
-        history: favoritesQuery.data ?? [],
+        favorites: favoritesQuery.data,
         addToFavorites,
         removeFavorite,
         isFavorite: (lat: number, lon: number) => favorites.some(city => city.lat === lat && city.lon === lon)
