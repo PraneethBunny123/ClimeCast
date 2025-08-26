@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./toggleMode";
 import CitySearch from "./CitySearch";
+import UnitsToggle from "./UnitsToggle";
 
 export default function Header() {
     return (
@@ -15,10 +16,12 @@ export default function Header() {
                     
                     {/* theme toggle */}
                     <ModeToggle />
+
+                    {/* units toggle */}
+                    <UnitsToggle />
                 </div>
 
             </div>
-
             
         </header>
     )
