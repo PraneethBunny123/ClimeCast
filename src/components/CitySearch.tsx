@@ -69,7 +69,7 @@ export default function CitySearch() {
                     
                     {favorites.length > 0 && (
                         <CommandGroup heading="Favorites">
-                            {history.map(location => (
+                            {favorites.map(location => (
                                 <CommandItem 
                                     key={location.id}
                                     value={`${location.lat}|${location.lon}|${location.name}|${location.country}`}   
