@@ -5,7 +5,7 @@ import UnitsToggle from "./UnitsToggle";
 import { useTheme } from "./theme-provider";
 
 export default function Header() {
-    const {theme, setTheme} = useTheme()
+    const {theme} = useTheme()
     const isDark = theme === "dark"
 
     return (
